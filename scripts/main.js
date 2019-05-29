@@ -6,11 +6,14 @@ getMoreQuotesButton.addEventListener('click', function(e){
     updateChuckSays();
 });
 
-function updateChuckSays() {
+async function updateChuckSays() {
     const chuckSays = document.getElementById('chuckSays');
-    
-    get('https://api.chucknorris.io/jokes/random?category=dev')
-    .then((response) => {
-        chuckSays.innerHTML = response;
-    });
+
+    const response = await getWithAwait('https://api.chucknorris.io/jokes/random?category=dev');
+    chuckSays.innerHTML = response.value;
+
+    // get('https://api.chucknorris.io/jokes/random?category=dev')
+    // .then((response) => {
+    //     chuckSays.innerHTML = response;
+    // });
 }
