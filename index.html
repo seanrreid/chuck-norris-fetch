@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Chuck Says...</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="wrapper">
-        <h1>Listen to Chuck!</h1>
+        <h1 class="title">Listen to Chuck!</h1>
         <div class="hero">
             <img src='./images/chuck.jpg'/>
         </div>
         <form id="chuckQuotesForm" action="#">
-            <h3>Category List</h3>
+            <h3 class="subtitle">Category List</h3>
             <label id="categorySelect">Select a Category</label>
-            <button type='submit'>Get Quote for this Category</button>
+            <button type='submit' class="button is-link is-outlined is-normal">Get Quote for this Category</button>
         </form>
-        <p id="chuckSays"></p>
+        <p id="chuckSays" class="quote"></p>
     </div>
     <script src="./scripts/get.js"></script>
     <script src="./scripts/main.js"></script>
