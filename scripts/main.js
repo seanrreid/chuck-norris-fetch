@@ -1,6 +1,19 @@
 "use strict";
 
 const chuckForm = document.querySelector("#chuckQuotesForm");
+const modalClose = document.querySelector("#closeModal");
+
+modalClose.addEventListener("click", function() {
+    toggleModal();
+});
+
+function toggleModal() {
+    const modalWindow = document.querySelector("#modalWindow");
+
+    if (modalWindow.classList) {
+        modalWindow.classList.toggle("open");
+    }
+}
 
 function updateChuckSays(category) {
     const chuckSays = document.getElementById("chuckSays");
@@ -8,6 +21,7 @@ function updateChuckSays(category) {
     get(`https://api.chucknorris.io/jokes/random?category=${category}`).then(
         function(response) {
             chuckSays.innerHTML = response.value;
+            toggleModal();
         }
     );
 }
